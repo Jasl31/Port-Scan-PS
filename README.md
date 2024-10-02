@@ -1,17 +1,17 @@
 # Port-Scan-PS
 Script basado en Powershell que contiene distintas herramientas que se usan para el escaneo de una red.
 
-1. Estructura del Menú
+# Estructura del Menú
 El script comienza mostrando un menú básico en pantalla, donde el usuario puede elegir una de las siguientes opciones:
 
 Opción 1: Escanear toda la subred.
 Opción 2: Escanear puertos en un equipo o dirección IP específica.
 Opción 3: Escanear puertos en todos los equipos activos en la subred.
 
-2. Captura de la opción seleccionada
+# Captura de la opción seleccionada
 El script usa el comando Read-Host para capturar la entrada del usuario y asignarla a la variable $opcion. Luego, un bloque switch evalúa esta opción para decidir qué operación realizar.
 
-3. Escaneo de Puertos para Todos los Equipos Activos (Opción 3)
+# Escaneo de Puertos para Todos los Equipos Activos (Opción 3)
 Obtención de la puerta de enlace predeterminada:
 
 Usa el comando Get-NetRoute para obtener la puerta de enlace predeterminada de la red, que es la dirección de tu gateway. Esto es necesario para conocer el rango de IPs que se van a escanear.
@@ -24,7 +24,7 @@ Para cada dirección IP en el rango, se usa el comando Test-Connection para hace
 Si la IP responde al ping, el script muestra la IP con un mensaje verde, indicando que el host está activo.
 Salida: Muestra todas las IP activas dentro del rango de la subred.
 
-4. Escaneo de Puertos para un Equipo o Dirección IP (Opción 2)
+# Escaneo de Puertos para un Equipo o Dirección IP (Opción 2)
 Conjunto de puertos a escanear:
 
 La variable $porttoscan contiene una lista de puertos comunes que serán escaneados en el equipo o IP seleccionada. Estos incluyen puertos HTTP, HTTPS, SSH, RDP, entre otros.
